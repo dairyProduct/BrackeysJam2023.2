@@ -16,5 +16,8 @@ MonoBehaviour:
     health: 21
     stamina: 12
     magic: 0
+    speed: 3
+    meleeReach: 3
+    rangedReach: 0
     sizeScaler: 2
   EnemyTitle: King Ogrely
