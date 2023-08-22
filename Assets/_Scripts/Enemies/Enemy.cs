@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Collider2D))]
+
 public class Enemy : Damageable
 {
     [SerializeField] Transform target;
@@ -22,6 +21,8 @@ public class Enemy : Damageable
     //TODO - update this to drop loot and be fancy and stuff
     protected override void OnDeath()
     {
+        SpawnGold();
+        SpawnAnItem(); //Maybe this is on a chance percent? - can even be stat driven
         Destroy(gameObject);
     }
 

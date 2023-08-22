@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Damageable : MonoBehaviour 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
+public abstract class Damageable : MonoBehaviour, ILoot
 {
     [SerializeField] protected StatBlock mystats;
     public void SetStats(StatBlock stats)
@@ -27,4 +29,14 @@ public abstract class Damageable : MonoBehaviour
     }
 
     abstract protected void OnDeath(); //Force the children to implement this - that way each Damageable handles death correctly
+
+    public void SpawnAnItem()
+    {
+        LootManager.instance.SpawnLoot(transform.position, mystats.level);
+    }
+
+    public void SpawnGold()
+    {
+        LootManager.instance.SpawnGold(transform.position, mystats.level);
+    }
 }

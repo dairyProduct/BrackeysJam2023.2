@@ -20,4 +20,5 @@ MonoBehaviour:
     meleeReach: 1
     rangedReach: 0
     sizeScaler: 1
+    level: 1
   EnemyTitle: Greedy Goblin

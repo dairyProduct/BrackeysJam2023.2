@@ -20,4 +20,5 @@ MonoBehaviour:
     meleeReach: 3
     rangedReach: 0
     sizeScaler: 2
+    level: 100
   EnemyTitle: King Ogrely
