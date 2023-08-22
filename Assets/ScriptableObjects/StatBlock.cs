@@ -10,6 +10,9 @@ public class StatBlock
     public int health;
     public int stamina;
     public int magic;
+    public float speed;
+    public float meleeReach;
+    public float rangedReach;
     public float sizeScaler;
 
 
@@ -18,6 +21,7 @@ public class StatBlock
         this.health = newStats.health;
         this.stamina = newStats.stamina;
         this.magic = newStats.magic;
+        this.speed = newStats.speed;
         this.sizeScaler = newStats.sizeScaler;
     }
 
