@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class EnemyBaseSetting : StatBlock
+public class EnemyBaseSetting : ScriptableObject
 {
 
-    protected StatBlock entityStats;
+    public StatBlock entityStats;
     public string EnemyTitle;
-    //More info?
-    //funcs to generate stats?
 
 }

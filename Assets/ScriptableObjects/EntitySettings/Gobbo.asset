@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cd03bc58574ee14386314e146bc2882, type: 3}
-  m_Name: Orc
+  m_Name: Gobbo
   m_EditorClassIdentifier: 
-  health: 8
-  stamina: 8
-  magic: 0
-  EnemyTitle: Gaudy Orc
+  entityStats:
+    health: 5
+    stamina: 5
+    magic: 5
+  EnemyTitle: Greedy Goblin

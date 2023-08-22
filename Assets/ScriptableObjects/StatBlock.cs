@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StatBlock : ScriptableObject
+[System.Serializable]
+public class StatBlock
 {
     public int health;
     public int stamina;
