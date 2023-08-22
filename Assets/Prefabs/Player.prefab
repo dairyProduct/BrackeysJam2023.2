@@ -136,7 +136,7 @@ MonoBehaviour:
   speed: 4
   maxSpeedDivisor: 0.7
   dashSpeed: 8
-  rotationSpeed: 1
+  rotationSpeed: 10
 --- !u!50 &2152420559834461314
 Rigidbody2D:
   serializedVersion: 4
