@@ -10,6 +10,7 @@ public class StatBlock
     public int health;
     public int stamina;
     public int magic;
+    public float sizeScaler;
 
 
     public void CopyStatBlock(StatBlock newStats)
@@ -17,6 +18,7 @@ public class StatBlock
         this.health = newStats.health;
         this.stamina = newStats.stamina;
         this.magic = newStats.magic;
+        this.sizeScaler = newStats.sizeScaler;
     }
 
 }

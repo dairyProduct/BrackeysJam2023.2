@@ -11,7 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Enemy spawn = Instantiate(enemyObject, Vector3.zero, Quaternion.identity).GetComponent<Enemy>();
+            Enemy spawn = Instantiate(enemyObject, transform.position, Quaternion.identity).GetComponent<Enemy>();
             spawn.SetStats(enemyStats.entityStats);
         }
     }

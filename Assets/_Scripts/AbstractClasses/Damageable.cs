@@ -8,6 +8,7 @@ public abstract class Damageable : MonoBehaviour
     public void SetStats(StatBlock stats)
     {
         mystats.CopyStatBlock(stats);
+        transform.localScale = transform.localScale * mystats.sizeScaler;
     }
 
     public void TakeDamage(int amount)
