@@ -133,9 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bb4f9d8f74ae44ea9caac624804459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 4
-  playerSpeedMax: 0.7
-  playerDashSpeed: 8
+  speed: 4
+  maxSpeedDivisor: 0.7
+  dashSpeed: 8
+  rotationSpeed: 1
 --- !u!50 &2152420559834461314
 Rigidbody2D:
   serializedVersion: 4
@@ -197,6 +198,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageBox: {fileID: 8075585896350236722}
   attackSprite: {fileID: 8405472690151888094}
+  attackTime: 0.7
+  currentTimer: 0
+  isAttacking: 0
+  damage: 3
+  earlyCleanupTimer: 0.35
+  isEarlyCleanup: 0
 --- !u!1 &2377574743757174183
 GameObject:
   m_ObjectHideFlags: 0
