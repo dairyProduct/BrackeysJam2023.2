@@ -16,7 +16,7 @@ MonoBehaviour:
     health: 5
     stamina: 5
     magic: 5
-    speed: 2
+    speed: 0.5
     meleeReach: 1
     rangedReach: 0
     sizeScaler: 1
