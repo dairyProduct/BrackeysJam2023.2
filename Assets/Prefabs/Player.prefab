@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2152420559834461314}
   - component: {fileID: 8075585896350236722}
   - component: {fileID: 1074518507436107573}
+  - component: {fileID: 7248168341453114775}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -204,6 +205,22 @@ MonoBehaviour:
   damage: 3
   earlyCleanupTimer: 0.35
   isEarlyCleanup: 0
+--- !u!58 &7248168341453114775
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152420559834461313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55
 --- !u!1 &2377574743757174183
 GameObject:
   m_ObjectHideFlags: 0
