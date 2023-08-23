@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory/Item")]
-public class Item : ScriptableObject
-{
-    public int id;
+public class Item : ScriptableObject {
+    public string ID = Guid.NewGuid().ToString();
     public string itemName = "Item Name";
     public string description = "A long Item description";
     public int quantity = 1;
@@ -14,13 +13,12 @@ public class Item : ScriptableObject
     public bool canStack = false;
     public Sprite icon;
 
+    [Tooltip("Inventory")]
+    public int slotIndex;
+
 
     public Item GetItemInstance() {
         return Instantiate(this);
-    }
-
-    public bool AddToStack() {
-        if(!canStack) return false;
     }
 
 }

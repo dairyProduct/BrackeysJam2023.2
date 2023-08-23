@@ -7,22 +7,27 @@ using UnityEngine.UI;
 public class InventoryItem : MonoBehaviour
 {
     public Item owningItem;
+    public InventorySlot slot;
 
     public Transform itemTransform;
 
     public Image icon;
     public TMP_Text quantityText;
     private void Start() {
-        if (owningItem == null) {
+        UpdateItem();
+    }
 
-        }
+    public void SetOwner(Item newItem) {
+        owningItem = newItem;
+        UpdateItem(); 
     }
 
     public void UpdateItem() {
         if(owningItem == null) {
-            ico
+            itemTransform.gameObject.SetActive(false);
+            return;
         }
-
-
+        icon.sprite = owningItem.icon;
+        quantityText.text = "x" + owningItem.quantity.ToString();
     }
 }
