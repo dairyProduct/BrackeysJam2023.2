@@ -17,19 +17,30 @@ public class CameraFollow : MonoBehaviour
 
     private Rigidbody2D targetRB;
 
-    private void Start(){
-        targetRB = target.GetComponent<Rigidbody2D>();
-
+    private void Start()
+    {
+        findTarget();
     }
     private void Update()
     {
-        if(target == null) return;
+        if(target == null) findTarget();
         //simple lerp from the camera's current pos to the new pos of the player
         float speedZoomDistance = targetRB.velocity.magnitude / 8;
         Camera.main.orthographicSize = setCameraSize + speedZoomDistance;
         Vector3 desiredPosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed* Time.deltaTime);
         transform.position = smoothedPosition;
+    }
+
+    private void findTarget()
+    {
+        GameObject targetGO = GameObject.FindWithTag("Player");
+        if(targetGO != null)
+        {
+            target = targetGO.transform;
+            targetRB = target.GetComponent<Rigidbody2D>();
+        }
+
     }
 
 }
