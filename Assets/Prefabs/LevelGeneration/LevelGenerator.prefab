@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2554968237567138351
+--- !u!1 &6584264728626642042
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2554968237567138344}
-  - component: {fileID: 2554968237567138345}
+  - component: {fileID: 6584264728626642043}
+  - component: {fileID: 6584264728626642040}
   m_Layer: 0
-  m_Name: SpawnEnemy
+  m_Name: LevelGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2554968237567138344
+--- !u!4 &6584264728626642043
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554968237567138351}
+  m_GameObject: {fileID: 6584264728626642042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,18 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2554968237567138345
+--- !u!114 &6584264728626642040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554968237567138351}
+  m_GameObject: {fileID: 6584264728626642042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c31ca28d8e9fdc4bbfb3c6b86c21f50, type: 3}
+  m_Script: {fileID: 11500000, guid: 386b8946ef318354fab4d58b7c0be1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyObject: {fileID: 8877839626704656949, guid: 9b4280897a6536149ab9a2598865a2af, type: 3}
-  enemyStats: {fileID: 11400000, guid: bff1917da46bb5b4b8c5f7aa65edf502, type: 2}
-  spawnFrequency: 7
+  levelHeight: 20
+  levelWidth: 30
+  levelWall: {fileID: 497791000787170103, guid: 03a2595a4af06d345b8d30734d277288, type: 3}
+  levelDoor: {fileID: 9121544448393936659, guid: c0cdf1ca1848005449361d069d535181, type: 3}
+  player: {fileID: 2152420559834461313, guid: 85f6fc13626c50049a880824a58a6234, type: 3}
+  scatter:
+  - {fileID: 5525262564534343256, guid: 8dcc507748b1ae64f8f8650bb458729e, type: 3}
+  spawnLocations: []
+  EnemySpawner: {fileID: 0}

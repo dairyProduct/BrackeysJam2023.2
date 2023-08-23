@@ -12,6 +12,7 @@ public class Enemy : Damageable
     [SerializeField] string myName;
     public TextMeshProUGUI uiName;
     public bool generateName = true;
+    float maxDist = 15f; //about camera size - outside of this range don't chase the player
 
     Rigidbody2D myRb;
 
@@ -61,9 +62,10 @@ public class Enemy : Damageable
 
     void goToMeleeRange()
     {
-        if (Vector2.Distance(transform.position, target.position) > mystats.meleeReach)
+        float dist = Vector2.Distance(transform.position, target.position);
+        if (dist > mystats.meleeReach && dist < maxDist)
         {
-            myRb.velocity = target.position - transform.position * mystats.speed;
+            myRb.velocity = (target.position - transform.position).normalized * mystats.speed;
         }
     }
 

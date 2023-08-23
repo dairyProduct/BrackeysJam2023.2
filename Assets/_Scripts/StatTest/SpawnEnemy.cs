@@ -6,13 +6,30 @@ public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemyObject;
     public EnemyBaseSetting enemyStats;
+    [SerializeField] float spawnFrequency = 20f; //every 10 seconds
+    float spawnTimer = 15f; //give the player a few seconds?
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (checkToSpawn())
         {
             Enemy spawn = Instantiate(enemyObject, transform.position, Quaternion.identity).GetComponent<Enemy>();
             spawn.SetStats(enemyStats.entityStats);
+        }
+    }
+
+
+    private bool checkToSpawn()
+    {
+        if (spawnTimer < spawnFrequency)
+        {
+            spawnTimer += Time.deltaTime;
+            return false;
+        }
+        else
+        {
+            spawnTimer = 0f;
+            return true;
         }
     }
 }
