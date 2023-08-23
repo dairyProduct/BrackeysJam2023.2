@@ -5,7 +5,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject {
+    [HideInInspector]
     public string ID = Guid.NewGuid().ToString();
+    
     public string itemName = "Item Name";
     public string description = "A long Item description";
     public int quantity = 1;

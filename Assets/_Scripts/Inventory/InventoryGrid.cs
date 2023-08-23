@@ -6,8 +6,10 @@ public class InventoryGrid : MonoBehaviour
 {
     public InventoryController owingInventory;
     public GameObject inventorySlotPrefab;
+    public GameObject inventoryItemPrefab;
 
     public InventorySlot[] slots;
+    public List<InventoryItem> items = new List<InventoryItem>();
 
     private void Start() {
         AddSlots();
@@ -32,19 +34,38 @@ public class InventoryGrid : MonoBehaviour
         }
     }
 
-    public void UpdateInventory() {
-        foreach (Item item in owingInventory.inventory)
-        {
-            if(item.wasSlotted) {
-                GameObject go = Instantiate(inventorySlotPrefab, slots[item.slotIndex].transform);
+    public void AddItems() {
+        //Add Items if they have a slot index
+        /*
+        if(item.wasSlotted) { //Add Item to slot if has slot index
+                GameObject go = Instantiate(inventoryItemPrefab, slots[item.slotIndex].transform);
                 slots[item.slotIndex].slottedItem = go.GetComponent<InventoryItem>();
-            } else {
-                
+            } else { //Add item to new free slot
+                InventorySlot openSlot = FindFirstOpenSlot();
+                GameObject go = Instantiate(inventoryItemPrefab, openSlot.transform);
+                openSlot.slottedItem = go.GetComponent<InventoryItem>();
+                go.GetComponent<InventoryItem>().slot = openSlot;
+                go.GetComponent<InventoryItem>().SetOwner(item);
+                items.Add(go);
             }
+            */
+    }
+
+    public void UpdateInventory() {
+        foreach (InventoryItem item in items)
+        {
+            item.UpdateItem();
         }
     }
 
-    void FindFirstOpenSlot() {
 
+    InventorySlot FindFirstOpenSlot() {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if(slots[i].slottedItem == null) {
+                return slots[i];
+            }
+        }
+        return null;
     }
 }

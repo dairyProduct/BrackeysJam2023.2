@@ -20,8 +20,10 @@ public class InventoryController : MonoBehaviour
                     itemToAdd.quantity = item.quantity - item.stackSize;
                     item.quantity = item.stackSize;
                     //Stack Overflow
+                    isDirty = true;
                     return Add(itemToAdd);
                 } else {
+                    isDirty = true;
                     return true;
                 }
             }
@@ -29,6 +31,7 @@ public class InventoryController : MonoBehaviour
         //Add a new Item to inventory
         if(inventory.Count < inventorySize) {
             inventory.Add(itemToAdd);
+            isDirty = true;
             return true;
         }
 
