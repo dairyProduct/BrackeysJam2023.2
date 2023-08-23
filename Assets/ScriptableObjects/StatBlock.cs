@@ -14,6 +14,7 @@ public class StatBlock
     public float meleeReach;
     public float rangedReach;
     public float sizeScaler;
+    public int level;
 
 
     public void CopyStatBlock(StatBlock newStats)
@@ -23,6 +24,7 @@ public class StatBlock
         this.magic = newStats.magic;
         this.speed = newStats.speed;
         this.sizeScaler = newStats.sizeScaler;
+        this.level = newStats.level;
     }
 
 }

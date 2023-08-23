@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Collider2D))]
+
 public class Enemy : Damageable
 {
     [SerializeField] Transform target;
     [SerializeField] bool isMelee;
     [SerializeField] bool isRanged;
+    [SerializeField] string myName;
+    public TextMeshProUGUI uiName;
+    public bool generateName = true;
+
     Rigidbody2D myRb;
 
 
@@ -17,11 +21,22 @@ public class Enemy : Damageable
     {
         myRb = GetComponent<Rigidbody2D>();
         getTarget();
+        if(uiName != null)
+        {
+            uiName.text = myName;
+        }
+        if(generateName)
+        {
+            myName = NameGenerator.instance.BuildAName();
+            uiName.text = myName;
+        }
     }
 
     //TODO - update this to drop loot and be fancy and stuff
     protected override void OnDeath()
     {
+        SpawnGold();
+        SpawnAnItem(); //Maybe this is on a chance percent? - can even be stat driven
         Destroy(gameObject);
     }
 

@@ -16,8 +16,9 @@ MonoBehaviour:
     health: 8
     stamina: 8
     magic: 0
-    speed: 2.5
+    speed: 1.5
     meleeReach: 1.5
     rangedReach: 0
     sizeScaler: 1.25
+    level: 2
   EnemyTitle: Orc Warrior
