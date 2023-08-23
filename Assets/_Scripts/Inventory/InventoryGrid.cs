@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryGrid : MonoBehaviour
 {
     public InventoryController owingInventory;
-    public GameObject inventoryItemPrefab;
+    public GameObject inventorySlotPrefab;
 
     public InventorySlot[] slots;
 
@@ -14,20 +14,37 @@ public class InventoryGrid : MonoBehaviour
         UpdateInventory();
     }
 
+    private void Update() {
+        if(owingInventory.isDirty) {
+            owingInventory.isDirty = false;
+            UpdateInventory();
+        }
+        
+    }
+
     public void AddSlots() {
         slots = new InventorySlot[owingInventory.inventorySize];
         for (int i = 0; i < owingInventory.inventorySize; i++)
         {
-            GameObject go = Instantiate(inventoryItemPrefab, transform);
+            GameObject go = Instantiate(inventorySlotPrefab, transform);
             slots[i] = go.GetComponent<InventorySlot>();
             slots[i].slotIndex = i;
         }
     }
 
     public void UpdateInventory() {
-        for (int i = 0; i < slots.Length; i++)
+        foreach (Item item in owingInventory.inventory)
         {
-
+            if(item.wasSlotted) {
+                GameObject go = Instantiate(inventorySlotPrefab, slots[item.slotIndex].transform);
+                slots[item.slotIndex].slottedItem = go.GetComponent<InventoryItem>();
+            } else {
+                
+            }
         }
+    }
+
+    void FindFirstOpenSlot() {
+
     }
 }

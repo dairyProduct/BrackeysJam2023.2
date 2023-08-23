@@ -14,6 +14,7 @@ public class Item : ScriptableObject {
     public Sprite icon;
 
     [Tooltip("Inventory")]
+    public bool wasSlotted;
     public int slotIndex;
 
 
