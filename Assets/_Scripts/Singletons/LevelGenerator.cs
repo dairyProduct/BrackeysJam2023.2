@@ -26,6 +26,7 @@ public class LevelGenerator : MonoBehaviour
         setPlayerStart();
         generateScatter(levelHeight, levelWidth);
         generateMonsterSpawners();
+        GameplayManager.instance.getDens();
     }
 
     private void generateRoom(int roomHeight, int roomWidth)

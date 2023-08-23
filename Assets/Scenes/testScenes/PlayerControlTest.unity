@@ -478,6 +478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OgreSpawn
       objectReference: {fileID: 0}
+    - target: {fileID: 2554968237567138351, guid: d68c08a3226cc45409ac005901716b2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d68c08a3226cc45409ac005901716b2d, type: 3}
 --- !u!1001 &1191761393
@@ -682,6 +686,37 @@ MonoBehaviour:
   smoothSpeed: 2
   setCameraSize: 0
   offset: {x: 0, y: 0, z: -10}
+--- !u!1 &1442509788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1442509789}
+  m_Layer: 0
+  m_Name: Spear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1442509789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442509788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1460888563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -741,6 +776,10 @@ PrefabInstance:
       propertyPath: enemyObject
       value: 
       objectReference: {fileID: 8877839626704656949, guid: e60aff33c9812f44a9d25e9cc478bd44, type: 3}
+    - target: {fileID: 2554968237567138345, guid: d68c08a3226cc45409ac005901716b2d, type: 3}
+      propertyPath: spawnFrequency
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2554968237567138351, guid: d68c08a3226cc45409ac005901716b2d, type: 3}
       propertyPath: m_Name
       value: GoblinSpawn
@@ -812,6 +851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcSpawn
       objectReference: {fileID: 0}
+    - target: {fileID: 2554968237567138351, guid: d68c08a3226cc45409ac005901716b2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d68c08a3226cc45409ac005901716b2d, type: 3}
 --- !u!4 &2106072804 stripped
@@ -877,6 +920,14 @@ PrefabInstance:
     - target: {fileID: 2152420559834461315, guid: 85f6fc13626c50049a880824a58a6234, type: 3}
       propertyPath: rotationSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250084012682300655, guid: 85f6fc13626c50049a880824a58a6234, type: 3}
+      propertyPath: arc
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250084012682300655, guid: 85f6fc13626c50049a880824a58a6234, type: 3}
+      propertyPath: speed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8075585896350236722, guid: 85f6fc13626c50049a880824a58a6234, type: 3}
       propertyPath: m_IsTrigger

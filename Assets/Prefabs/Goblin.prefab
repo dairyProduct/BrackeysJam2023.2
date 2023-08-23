@@ -114,6 +114,7 @@ MonoBehaviour:
   isRanged: 0
   myName: Gobbo
   uiName: {fileID: 4644290125394578140}
+  generateName: 1
 --- !u!50 &234135643162822746
 Rigidbody2D:
   serializedVersion: 4
@@ -134,7 +135,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8530023486496897366
 BoxCollider2D:
   m_ObjectHideFlags: 0

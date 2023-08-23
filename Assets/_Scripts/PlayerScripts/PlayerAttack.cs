@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        //Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if(Input.GetMouseButtonDown(0) && !isAttacking)
         {
             DrawAttack();

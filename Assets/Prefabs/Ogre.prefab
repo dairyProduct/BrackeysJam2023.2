@@ -108,7 +108,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2373563989500216244
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   isRanged: 0
   myName: Albert
   uiName: {fileID: 2558355506899705962}
+  generateName: 1
 --- !u!1001 &8065208063274431265
 PrefabInstance:
   m_ObjectHideFlags: 0
