@@ -46,8 +46,11 @@ public class Weapon : MonoBehaviour
             Debug.Log("Weapon smacked something! " + collision.gameObject.tag);
             if (collision.gameObject.TryGetComponent(out Damageable damageable) && collision.gameObject != owner.gameObject)
             {
-                damageable.TakeDamage(damage);
-                hasDamaged = true;
+                if (damageable.team != owner.gameObject.GetComponent<Damageable>().team)
+                {
+                    damageable.TakeDamage(damage);
+                    hasDamaged = true;
+                }
             }
         }
     }

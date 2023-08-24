@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class Damageable : MonoBehaviour, ILoot
 {
     [SerializeField] protected StatBlock mystats;
+    public int team;
     public void SetStats(StatBlock stats)
     {
         mystats.CopyStatBlock(stats);

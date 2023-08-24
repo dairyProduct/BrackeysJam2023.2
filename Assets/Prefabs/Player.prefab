@@ -251,6 +251,7 @@ MonoBehaviour:
     rangedReach: 0
     sizeScaler: 0
     level: 1
+  team: 1
 --- !u!1 &4619786526285035752
 GameObject:
   m_ObjectHideFlags: 0

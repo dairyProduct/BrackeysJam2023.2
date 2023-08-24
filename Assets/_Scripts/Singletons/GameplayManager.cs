@@ -8,8 +8,8 @@ public class GameplayManager : MonoBehaviour
 {
     public GameObject[] dens;
     public GameObject player;
-    bool won = false;
-    bool loss = false;
+    public bool won = false;
+    public bool loss = false;
     public static GameplayManager instance;
     public bool started = false;
     public TextMeshProUGUI ggtext;
@@ -18,7 +18,7 @@ public class GameplayManager : MonoBehaviour
     float restartTime = 2f;
     bool startTimer = false;
 
-    private void Start()
+    private void Awake()
     {
         if (instance == null)
         {
@@ -27,7 +27,8 @@ public class GameplayManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }    
+        }
+        //getDens();
     }
 
 

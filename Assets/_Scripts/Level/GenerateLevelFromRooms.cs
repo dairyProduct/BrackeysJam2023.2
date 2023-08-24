@@ -35,7 +35,8 @@ public class GenerateLevelFromRooms : MonoBehaviour
             iterations++;
         }
         blockAllUnusedDoors();
-        
+        GameplayManager.instance.getDens();
+        GameplayManager.instance.started = true;
     }
 
 
