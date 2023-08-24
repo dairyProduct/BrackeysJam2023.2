@@ -13,6 +13,8 @@ public class WeaponAttack : MonoBehaviour
     public Transform swordHold;
     public Transform spearHold;
     public Transform weaponLocation;
+    public bool isAI;
+    bool aiAttack;
 
     private void Start()
     {
@@ -42,8 +44,20 @@ public class WeaponAttack : MonoBehaviour
     }
 
 
+    public void AIAttackCall()
+    {
+        aiAttack = true;
+    }
+
     bool checkForInput()
     {
+        if(isAI)
+        {
+            if(aiAttack)
+            {
+                return true;
+            }
+        }
         if (Input.GetMouseButtonDown(0))
         {
             return true;
@@ -107,6 +121,7 @@ public class WeaponAttack : MonoBehaviour
                 isAttacking = false;
                 attackReload = 0f;
                 weaponScript.isAttacking = false;
+                aiAttack = false;
             }
         }
         else

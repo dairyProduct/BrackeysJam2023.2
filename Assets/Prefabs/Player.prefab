@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8075585896350236722}
   - component: {fileID: 7248168341453114775}
   - component: {fileID: 4291467550309165767}
+  - component: {fileID: 8573530672489504268}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -228,6 +229,28 @@ MonoBehaviour:
   swordHold: {fileID: 382237444677863384}
   spearHold: {fileID: 547703218549840113}
   weaponLocation: {fileID: 4088477957707603389}
+  isAI: 0
+--- !u!114 &8573530672489504268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152420559834461313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b72b66f8f0a81448cddeeaf619fe03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mystats:
+    health: 25
+    stamina: 0
+    magic: 0
+    speed: 0
+    meleeReach: 0
+    rangedReach: 0
+    sizeScaler: 0
+    level: 1
 --- !u!1 &4619786526285035752
 GameObject:
   m_ObjectHideFlags: 0

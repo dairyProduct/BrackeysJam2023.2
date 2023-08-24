@@ -10,9 +10,12 @@ public class Enemy : Damageable
     [SerializeField] bool isMelee;
     [SerializeField] bool isRanged;
     [SerializeField] string myName;
+    public WeaponAttack myWeapon;
     public TextMeshProUGUI uiName;
     public bool generateName = true;
     float maxDist = 15f; //about camera size - outside of this range don't chase the player
+    float meleeRange = 2f;
+    bool isInRange = false;
 
     Rigidbody2D myRb;
 
@@ -44,6 +47,10 @@ public class Enemy : Damageable
     private void Update()
     {
         getToRange();
+        if(isInRange)
+        {
+            myWeapon.AIAttackCall();
+        }
     }
 
 
@@ -63,9 +70,14 @@ public class Enemy : Damageable
     void goToMeleeRange()
     {
         float dist = Vector2.Distance(transform.position, target.position);
-        if (dist > mystats.meleeReach && dist < maxDist)
+        if (dist > meleeRange && dist < maxDist)
         {
+            isInRange = false;
             myRb.velocity = (target.position - transform.position).normalized * mystats.speed;
+        }
+        else if (dist < meleeRange)
+        {
+            isInRange = true;
         }
     }
 
