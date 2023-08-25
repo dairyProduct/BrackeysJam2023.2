@@ -10,14 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ed6ceb857ff56d4da088d670ea80db4, type: 3}
-  m_Name: TestItem
+  m_Name: TestWeapon
   m_EditorClassIdentifier: 
-  ID: 249723a6-926d-4c17-bfc6-d0172d26157f
-  itemName: Test Item
+  ID: 115df406-ee81-483b-b6ea-bd5e2197a5e9
+  itemName: Item Name
   description: A long Item description
   quantity: 1
   stackSize: 16
   canStack: 0
-  icon: {fileID: 801126512, guid: aaf55a3ecc348bf45b38454cd98bad06, type: 3}
+  icon: {fileID: 0}
   wasSlotted: 0
   slotIndex: 0
+  damage: 0
+  WeaponType: 0
+  range: 0
+  hitbox: {x: 0, y: 0}
+  projectileCooldown: 0
+  attackLength: 0
+  projectileAmount: 0

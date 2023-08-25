@@ -19,6 +19,25 @@ public class Item : ScriptableObject {
     public bool wasSlotted;
     public int slotIndex;
 
+    [Tooltip("Weapon")]
+    public float damage;
+    public weaponType WeaponType;
+    public float range;
+
+    public Vector2 hitbox;
+
+    public float projectileCooldown;
+    public float attackLength;
+    public int projectileAmount;
+
+
+
+    public enum weaponType
+    {
+        melee,
+        ranged
+    }
+
 
     public Item GetItemInstance() {
         return Instantiate(this);

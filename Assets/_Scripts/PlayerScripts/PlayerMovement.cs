@@ -9,9 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float maxSpeedDivisor;
     [SerializeField] float dashSpeed;
     [SerializeField] float rotationSpeed;
-    float inputHorizontal;
-    float inputVertical;
-    Vector2 movementInput;
+    Vector2 movement;
+    public Transform direction;
     Rigidbody2D myRb;
 
     private void Start()
@@ -21,46 +20,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
-        movementInput = new Vector2(inputHorizontal, inputVertical);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        movement.Normalize();
     }
 
 
     private void FixedUpdate()
     {
-        setPlayerVelocity();
-        rotateTowardsInput();
-    }
-
-
-    private void setPlayerVelocity()
-    {
-        if (inputHorizontal != 0 || inputVertical != 0)
-        {
-
-            if (inputHorizontal != 0 && inputVertical != 0)
-            {
-                inputHorizontal *= maxSpeedDivisor;
-                inputVertical *= maxSpeedDivisor;
-            }
-            myRb.velocity = new Vector2(inputHorizontal * speed, inputVertical * speed);
-        }
-
-        else
-        {
-            myRb.velocity = new Vector2(0f, 0f);
-        }
-    }
-
-    private void rotateTowardsInput()
-    {
-        if (movementInput != Vector2.zero)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, movementInput);
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed);
-            myRb.MoveRotation(rotation);
-        }
+        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        direction.Normalize();
+        myRb.velocity = (transform.up * movement.y + transform.right * movement.x) * speed;
+        //myRb.velocity = ((direction * movement.y) + (Vector2)(transform.right * movement.x)) * speed;
     }
 
 
